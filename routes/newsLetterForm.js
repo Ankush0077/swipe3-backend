@@ -13,7 +13,7 @@ router.post("/submit", async (request, response) => {
 
         const newForm = new newsLetterForm(
             {
-                newsLetter_form_id: formID,
+                news_letter_form_id: formID,
                 applicant_name: request.body.applicant_name,
                 email_id: emailID,
             }
@@ -30,7 +30,7 @@ router.post("/submit", async (request, response) => {
 
 // DELETE FORM
 router.delete("/delete/:form_id", verifyTokenAndAdmin, async (request, response) => {
-    form_id = request.params.form_id;
+    news_letter_form_id = request.params.form_id;
     try {
         const newsLetter_form = await newsLetterForm.findOne({
             form_id: form_id,

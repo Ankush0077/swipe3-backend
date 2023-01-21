@@ -41,7 +41,7 @@ router.delete("/delete/:form_id", verifyTokenAndAdmin, async (request, response)
     form_id = request.params.form_id;
     try {
         const job_form = await jobForm.findOne({
-            form_id: form_id,
+            job_form_id: form_id,
         });
         if(job_form){
             const deletedJobForm = await jobForm.findByIdAndDelete(job_form.id);

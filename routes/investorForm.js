@@ -40,7 +40,7 @@ router.delete("/delete/:form_id", verifyTokenAndAdmin, async (request, response)
     form_id = request.params.form_id;
     try {
         const investor_form = await investorForm.findOne({
-            form_id: form_id,
+            investor_form_id: form_id,
         });
         if(investor_form){
             const deletedInvestorForm = await investorForm.findByIdAndDelete(investor_form.id);
