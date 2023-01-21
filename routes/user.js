@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const CryptoJS = require("crypto-js");
 
 const User = require("../models/User");
 const logger = require("../config/logger");
