@@ -41,11 +41,11 @@ router.post("/submit", async (request, response) => {
 router.delete("/delete/:form_id", verifyTokenAndAdmin, async (request, response) => {
     form_id = request.params.form_id;
     try {
-        const jobForm = await jobForm.findOne({
+        const job_form = await jobForm.findOne({
             form_id: form_id,
         });
-        if(jobForm){
-            const deletedJobForm = await jobForm.findByIdAndDelete(jobForm.id);
+        if(job_form){
+            const deletedJobForm = await jobForm.findByIdAndDelete(job_form.id);
             logger.info("Job Form deletion initiated: " + form_id + "\nJob Form Details:\n"+ JSON.stringify(deletedJobForm));
             response.status(200).json("jobForm has been deleted");
             logger.info("Job Form has been deleted: " + form_id);
