@@ -5,9 +5,10 @@ const dotenv = require("dotenv");
 
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
-const jobFormRoute = require("./routes/jobForm")
-const investorFormRoute = require("./routes/investorForm")
-const logger = require("./config/logger")
+const jobFormRoute = require("./routes/jobForm");
+const investorFormRoute = require("./routes/investorForm");
+const newsLetterFormRoute = require("./routes/newsLetterForm");
+const logger = require("./config/logger");
 
 dotenv.config();
 
@@ -32,6 +33,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/job_form", jobFormRoute);
 app.use("/api/investor_form", investorFormRoute);
+app.use("/api/news_letter_form", newsLetterFormRoute);
 
 const port = process.env.PORT;
 app.listen(port || 5000, () => {
