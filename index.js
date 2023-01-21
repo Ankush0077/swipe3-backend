@@ -31,7 +31,7 @@ app.use(require('cors')());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/job_form", jobFormRoute);
-app.use("/api/investor_form", jobFormRoute);
+app.use("/api/investor_form", investorFormRoute);
 
 const port = process.env.PORT;
 app.listen(port || 5000, () => {
