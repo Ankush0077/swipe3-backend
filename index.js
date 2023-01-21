@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
 const jobFormRoute = require("./routes/jobForm")
+const investorFormRoute = require("./routes/investorForm")
 const logger = require("./config/logger")
 
 dotenv.config();
