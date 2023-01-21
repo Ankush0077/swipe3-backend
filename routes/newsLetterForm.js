@@ -9,7 +9,7 @@ router.post("/submit", async (request, response) => {
     try {
         emailID = request.body.email_id;
         current_time = Date.now();
-        formID = current_time+"Form"+email_id;
+        formID = current_time+"Form"+emailID;
 
         const newForm = new newsLetterForm(
             {
