@@ -7,7 +7,6 @@ const { verifyTokenAndAuthorization, verifyTokenAndAdmin } = require("./verifyTo
 // POST FORM
 router.post("/submit", async (request, response) => {
     try {
-        logger.info(request.body);
         phoneNumber = request.body.phone_number;
         current_time = Date.now();
         formID = current_time+"Form"+phoneNumber;
@@ -49,7 +48,7 @@ router.delete("/delete/:form_id", verifyTokenAndAdmin, async (request, response)
             response.status(200).json("Investor Form has been deleted");
             logger.info("Investor Form has been deleted: " + form_id);
         } else{
-            response.status(500).json("No such investorForm exists!")
+            response.status(500).json("No such Investor Form exists!")
             logger.info("Non existing Investor Form tried to update its information: " + form_id)
         }
     } catch(error) {
